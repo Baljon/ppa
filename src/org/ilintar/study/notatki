@@ -1,0 +1,29 @@
+// 1) implementacja Question - ma zwracać Node
+// 2) uzupełnić tę klasę żeby zwracał przycisk
+// 3) fabryka ma zwracać obiekt typu Question
+// 4) struktura danych do zapisywania pytań, która zapisuje po identyfikatorach
+
+fire_event (metoda którą wywołuje question
+for (listener in listeners)
+listener.handleListener
+
+lalala
+trzymamy listenery w jakiejs kolekcji, bo moze byc ich dużo
+załadujemy pytanie
+zapisujemy odpowiedz
+wywalamy
+ladujemy nowe
+listener sie przypina do nowego pytania
+
+klasy wewnętrzne?
+klasy anonimowe?
+
+klasy statyczne wewnetrzne maja deklaracje wewnatrz innych klas
+
+public class A {
+public static class B
+}
+--> nie musimy mieć obiekty klasy A zeby stworzyć obiekt klasy B
+
+[gdy usuniemy static, to robi sie klasa wewnetrzna, dostep do "new" klasy b ma obiekt klasy a.
+czyli obiekty klasy B zyja w mikroświecie obiektu kalsy A]

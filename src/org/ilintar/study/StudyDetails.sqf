@@ -1,4 +1,4 @@
-StartQuestion type=radio
+StartQuestion type=radio id=pyt1
 This is the question
 First answer
 A
@@ -8,4 +8,15 @@ Third answer modified
 C
 Fourth answer
 D
+EndQuestion
+StartQuestion type=radio
+Second question
+Answer1
+A1
+Answer2
+B2
+Answer3
+C3
+Answer4
+D4
 EndQuestion
