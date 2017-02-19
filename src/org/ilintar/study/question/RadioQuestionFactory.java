@@ -11,7 +11,7 @@ import java.util.List;
 public class RadioQuestionFactory implements QuestionFactory {
 
 	@Override
-	public Question createQuestion(List<String> lines) {
+	public Question createQuestion(List<String> lines, String questionId) {
 		VBox question = new VBox(); //VBox lays out its children in a single vertical column
 		String questionText = lines.get(0);
 		question.getChildren().add(new Label(questionText));
@@ -26,7 +26,7 @@ public class RadioQuestionFactory implements QuestionFactory {
 		}
 		question.onContextMenuRequestedProperty();
 		Button nextButton = createNextButton();
-		return new RadioQuestion(question, group, nextButton);
+		return new RadioQuestion(question, group, nextButton, questionId);
 	}
 
 	private Button createNextButton() {

@@ -4,6 +4,6 @@ import java.util.List;
 
 public interface QuestionFactory {
 		
-	Question createQuestion(List<String> lines);
+	Question createQuestion(List<String> lines, String questionId);
 	
 }

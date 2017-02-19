@@ -27,3 +27,15 @@ public static class B
 
 [gdy usuniemy static, to robi sie klasa wewnetrzna, dostep do "new" klasy b ma obiekt klasy a.
 czyli obiekty klasy B zyja w mikroświecie obiektu kalsy A]
+
+
+12.01.2017
+Jak pisać aplikacje?
+Nie pisze się od podstaw, korzysta się z bibliotek (my korzystamy niby z java fx, ale ze jest wbudowany w jave no to tak jakby nic nie wykorzystujemy nowego)
+juz nie uml, tylko rapid prototyping
+
+Dla kogo? Do czego aplikacja?
+
+(...)
+
+do bibiliotek --> Maven (za pomocą xml'ek konfigurujemy costam)

@@ -7,28 +7,31 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.VBox;
-import org.ilintar.study.question.event.QuestionAnsweredEvent;
 import org.ilintar.study.question.event.QuestionAnsweredEventListener;
 
 public class RadioQuestion implements Question {
 
+    private final String questionId;
     private VBox vBox;
     private ToggleGroup group;
     private Button nextButton;
 
-    public RadioQuestion(VBox vBox, ToggleGroup group, Button nextButton) {
+    public RadioQuestion(VBox vBox, ToggleGroup group, Button nextButton, String questionId) {
         this.vBox = vBox;
         this.group = group;
         this.nextButton = nextButton;
-        passToggleResult(group, nextButton);
+        this.questionId = questionId;
+        passToggleResult(group, nextButton, questionId);
     }
 
-    private void passToggleResult(final ToggleGroup group, final Button nextButton) {
+    private void passToggleResult(final ToggleGroup group, final Button nextButton, final String questionId) {
 
         group.selectedToggleProperty().addListener(new ChangeListener<Toggle>() {
             @Override
             public void changed(ObservableValue<? extends Toggle> observable, Toggle oldValue, Toggle newValue) {
-                nextButton.setUserData(group.getSelectedToggle().getUserData().toString());
+                //System.out.println(group.getSelectedToggle());
+
+                nextButton.setUserData(group.getSelectedToggle().getUserData().toString()+" id:"+questionId);
             }
         });
     }
@@ -41,17 +44,12 @@ public class RadioQuestion implements Question {
 
     @Override
     public String getId() {
-        return vBox.getId();
+        return this.questionId;
     }
 
     @Override
     public void addQuestionAnsweredListener(QuestionAnsweredEventListener listener) {
-        nextButton.setOnAction((event) -> {
-            if (nextButton.getUserData() != null) {
-                QuestionAnsweredEvent qevent = new QuestionAnsweredEvent(this, new SimpleAnswer(nextButton.getUserData()));
-                listener.handleEvent(qevent);
-            }
-        });
+        nextButton.setOnAction(listener::handleEvent);
     }
 
     @Override

@@ -8,6 +8,7 @@ public interface QuestionAnsweredEventListener {
     //zazwyczaj ma jedna metode - handleEvent
     //interfejs funkcyjny (zawiera tylko jedna metode)
 
-    void handleEvent(QuestionAnsweredEvent event);
+    @FXML
+    void handleEvent(ActionEvent event);
 
 }

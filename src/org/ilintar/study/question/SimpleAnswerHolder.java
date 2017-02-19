@@ -9,7 +9,6 @@ import java.util.Objects;
 public class SimpleAnswerHolder implements  AnswerHolder{
 
     private List list = new ArrayList<String>();
-
     @Override
     public void putAnswer(Object answer) {
         list.add(answer);
